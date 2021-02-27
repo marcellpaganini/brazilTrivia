@@ -14,15 +14,15 @@
 
         <ImageView
             android:id="@+id/rulesImage"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/image_header_height"
+            android:layout_width="394dp"
+            android:layout_height="213dp"
             android:layout_marginStart="@dimen/horizontal_margin"
             android:layout_marginTop="@dimen/vertical_margin"
             android:layout_marginEnd="@dimen/horizontal_margin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/trivia_rules" />
+            app:srcCompat="@drawable/brazil5" />
 
         <TextView
             android:id="@+id/rulesText"

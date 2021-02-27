@@ -1,19 +1,3 @@
-<!--
-  ~ Copyright 2018, The Android Open Source Project
-  ~
-  ~ Licensed under the Apache License, Version 2.0 (the "License");
-  ~ you may not use this file except in compliance with the License.
-  ~ You may obtain a copy of the License at
-  ~
-  ~     http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~ Unless required by applicable law or agreed to in writing, software
-  ~ distributed under the License is distributed on an "AS IS" BASIS,
-  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~ See the License for the specific language governing permissions and
-  ~ limitations under the License.
-  -->
-
 <resources>
     <string name="app_name">Brazil Trivia</string>
     <string name="game_over">Game Over</string>
@@ -25,6 +9,7 @@
     <string name="rules_text">Select the answer from the options given. Each time you get an answer correct or wrong, you can advance to the next question.\n\n Points are increased by each right answer submitted. You can return to the title screen using up or back from within the game screen, and this will also end your game.</string>
     <string name="rules">Rules</string>
     <string name="about">About</string>
+    <string name="score">Your Score:</string>
     <string name="trivia_hint">Trivia Hint</string>
     <string name="title_android_trivia_question">Brazil Trivia (%1$d/%2$d)</string>
     <string name="title_about_trivia">About Trivia</string>
@@ -35,4 +20,24 @@
     <string name="congratulations">Congratulations!</string>
     <string name="share">Share</string>
     <string name="sharing_not_available">Sharing Not Available</string>
+    <string name="question_1">Rio is the capital of Brazil.</string>
+    <string name="question_2">Amazon is the most popular Brazilian river.</string>
+    <string name="question_3">Brazilian carnival usually starts in February. </string>
+    <string name="question_4">Volleyball is Brazil\'s most popular sport.</string>
+    <string name="question_5">Brazil has already won 13 Volleyball World Cups.</string>
+    <string name="question_6">The famous Copacabana and Ipanema beaches are located in Rio.</string>
+    <string name="question_7">The official language of Brazil is Spanish.</string>
+    <string name="question_8">Sao Paulo is the largest city in Brazil.</string>
+    <string name="question_9">Brazil has the second largest country area of the world.</string>
+    <string name="question_10">The city of Ouro Preto is located in Sao Paulo.</string>
+    <string name="question_11">Brazil has more than 30 states within its area.</string>
+    <string name="question_12">Green, yellow and blue. The colors in the Brazilian flag represent the forests, gold and the sky/rivers, respectively.</string>
+    <string name="question_13">Pele is a famous basketball player.</string>
+    <string name="question_14">Itaipu is one of the largest dams in the world.</string>
+    <string name="question_15">Brazil borders all other South American countries.</string>
+    <string name="question_16">Brazil is located in Central America.</string>
+    <string name="question_17">Brazil population is estimated at 212,559,417 people.</string>
+    <string name="question_18">The Pacific ocean borders Brazil to the East.</string>
+    <string name="question_19">The money or currency of Brazil is called Peso.</string>
+    <string name="question_20">Brazil is ruled by a president.</string>
 </resources>
