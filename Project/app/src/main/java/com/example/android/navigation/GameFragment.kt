@@ -182,6 +182,12 @@ class GameFragment : Fragment() {
                 }
             }
         }
+
+        binding.returnButton.setOnClickListener @Suppress("UNUSED_ANONYMOUS_PARAMETER")
+        { view: View ->
+
+        }
+
         return binding.root
     }
 

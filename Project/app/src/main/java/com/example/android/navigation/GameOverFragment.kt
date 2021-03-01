@@ -20,6 +20,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.android.navigation.databinding.FragmentGameOverBinding
@@ -27,11 +29,17 @@ import com.example.android.navigation.databinding.FragmentGameOverBinding
 class GameOverFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+
+        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.app_name)
+
         // Inflate the layout for this fragment
         val binding: FragmentGameOverBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_game_over, container, false)
+
         val args = GameOverFragmentArgs.fromBundle((requireArguments()))
         binding.textView2.text = getString(R.string.score, args.score)
+        Toast.makeText(context, "${args.score}/10", Toast.LENGTH_LONG).show()
+
         return binding.root
     }
 }
