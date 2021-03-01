@@ -14,11 +14,8 @@
 
         <ImageView
             android:id="@+id/aboutImage"
-            android:layout_width="395dp"
-            android:layout_height="254dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="@dimen/vertical_margin"
-            android:layout_marginEnd="4dp"
+            android:layout_width="451dp"
+            android:layout_height="285dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

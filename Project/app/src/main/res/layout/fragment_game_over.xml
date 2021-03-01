@@ -13,9 +13,8 @@
 
         <ImageView
             android:id="@+id/tryAgainImage"
-            android:layout_width="415dp"
-            android:layout_height="251dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="517dp"
+            android:layout_height="316dp"
             android:scaleType="fitCenter"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

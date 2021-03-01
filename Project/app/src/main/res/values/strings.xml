@@ -6,10 +6,10 @@
     <string name="select_an_avatar">Select an Avatar</string>
     <string name="android_trivia">Brazil Trivia</string>
     <string name="about_text">The Brazil Trivia Game will test your knowledge in basic concepts of Brazil\'s geography, culture food and other aspects.\n\nHave fun!</string>
-    <string name="rules_text">Select the answer from the options given. Each time you get an answer correct or wrong, you can advance to the next question.\n\n Points are increased by each right answer submitted. You can return to the title screen using up or back from within the game screen, and this will also end your game.</string>
+    <string name="rules_text">Select the answer from the options given. Each time you get an answer correct or wrong, you advance to the next question.\n\n Points are increased by each right answer submitted. You can return to the title screen using up or back from within the game screen, and this will also end your game.</string>
     <string name="rules">Rules</string>
     <string name="about">About</string>
-    <string name="score">Your Score:</string>
+    <string name="score">Your Score: %1$d</string>
     <string name="trivia_hint">Trivia Hint</string>
     <string name="title_android_trivia_question">Brazil Trivia (%1$d/%2$d)</string>
     <string name="title_about_trivia">About Trivia</string>
@@ -24,7 +24,7 @@
     <string name="question_2">Amazon is the most popular Brazilian river.</string>
     <string name="question_3">Brazilian carnival usually starts in February. </string>
     <string name="question_4">Volleyball is Brazil\'s most popular sport.</string>
-    <string name="question_5">Brazil has already won 13 Volleyball World Cups.</string>
+    <string name="question_5">Feijoada is a famous Brazilian dessert.</string>
     <string name="question_6">The famous Copacabana and Ipanema beaches are located in Rio.</string>
     <string name="question_7">The official language of Brazil is Spanish.</string>
     <string name="question_8">Sao Paulo is the largest city in Brazil.</string>
@@ -33,7 +33,7 @@
     <string name="question_11">Brazil has more than 30 states within its area.</string>
     <string name="question_12">Green, yellow and blue. The colors in the Brazilian flag represent the forests, gold and the sky/rivers, respectively.</string>
     <string name="question_13">Pele is a famous basketball player.</string>
-    <string name="question_14">Itaipu is one of the largest dams in the world.</string>
+    <string name="question_14">Brazil has a unique musical style called Samba.</string>
     <string name="question_15">Brazil borders all other South American countries.</string>
     <string name="question_16">Brazil is located in Central America.</string>
     <string name="question_17">Brazil population is estimated at 212,559,417 people.</string>

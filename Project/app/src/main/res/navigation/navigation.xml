@@ -29,7 +29,11 @@
         android:id="@+id/gameOverFragment"
         android:name="com.example.android.navigation.GameOverFragment"
         android:label="fragment_game_over"
-        tools:layout="@layout/fragment_game_over" />
+        tools:layout="@layout/fragment_game_over" >
+        <argument
+            android:name="score"
+            app:argType="integer" />
+    </fragment>
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.example.android.navigation.AboutFragment"

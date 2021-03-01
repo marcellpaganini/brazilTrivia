@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -14,7 +15,9 @@ import com.example.android.navigation.databinding.FragmentGameBinding
 class GameFragment : Fragment() {
     data class Question(
             val text: Int,
-            val answers: List<String>
+            val answers: List<String>,
+            var answered: String? = null,
+            var correct: String? = null
             )
 
     private val questionBank : MutableList<Question> = mutableListOf(
@@ -45,6 +48,7 @@ class GameFragment : Fragment() {
     lateinit var answers: MutableList<String>
     private var questionIndex = 0
     private val numQuestions = Math.min((questionBank.size + 1) / 2, 10)
+    private var score: Int = 0;
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -59,8 +63,9 @@ class GameFragment : Fragment() {
         // Bind this fragment class to the layout
         binding.game = this
 
-        // Set the onClickListener for the submitButton
-        binding.submitButton.setOnClickListener @Suppress("UNUSED_ANONYMOUS_PARAMETER")
+        binding.textView4.text = getString(string.score, score)
+
+        binding.firstAnswerRadioButton.setOnClickListener() @Suppress("UNUSED_ANONYMOUS_PARAMETER")
         { view: View ->
             val checkedId = binding.questionRadioGroup.checkedRadioButtonId
             // Do nothing if nothing is checked (id == -1)
@@ -72,18 +77,108 @@ class GameFragment : Fragment() {
                 // The first answer in the original question is always the correct one, so if our
                 // answer matches, we have the correct answer.
                 if (answers[answerIndex] == currentQuestion.answers[0]) {
+                    //questionIndex++
+                    // Advance to the next question
+                    if (questionIndex < numQuestions) {
+                        currentQuestion = questionBank[questionIndex]
+                        //setQuestion()
+                        binding.invalidateAll()
+                        binding.firstAnswerRadioButton.isEnabled = false
+                        binding.secondAnswerRadioButton.isEnabled = false
+                        binding.imageView.isVisible = true
+                    } else {
+
+                        view.findNavController()
+                                .navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment(score))
+                    }
+                } else {
+                    binding.imageView2.isVisible = true
+                    binding.firstAnswerRadioButton.isEnabled = false
+                    binding.secondAnswerRadioButton.isEnabled = false
+                }
+            }
+
+        }
+
+        binding.secondAnswerRadioButton.setOnClickListener() @Suppress("UNUSED_ANONYMOUS_PARAMETER")
+        { view: View ->
+            val checkedId = binding.questionRadioGroup.checkedRadioButtonId
+            // Do nothing if nothing is checked (id == -1)
+            if (-1 != checkedId) {
+                var answerIndex = 0
+                when (checkedId) {
+                    R.id.secondAnswerRadioButton -> answerIndex = 1
+                }
+                // The first answer in the original question is always the correct one, so if our
+                // answer matches, we have the correct answer.
+                if (answers[answerIndex] == currentQuestion.answers[0]) {
+                    //questionIndex++
+                    // Advance to the next question
+                    if (questionIndex < numQuestions) {
+                        currentQuestion = questionBank[questionIndex]
+                        //setQuestion()
+                        binding.invalidateAll()
+                        binding.firstAnswerRadioButton.isEnabled = false
+                        binding.secondAnswerRadioButton.isEnabled = false
+                        binding.imageView.isVisible = true
+                    } else {
+                        view.findNavController()
+                                .navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment(score))
+                    }
+                } else {
+                    binding.imageView2.isVisible = true
+                    binding.firstAnswerRadioButton.isEnabled = false
+                    binding.secondAnswerRadioButton.isEnabled = false
+                }
+            }
+
+        }
+
+        // Set the onClickListener for the submitButton
+        binding.submitButton.setOnClickListener @Suppress("UNUSED_ANONYMOUS_PARAMETER")
+        { view: View ->
+            val checkedId = binding.questionRadioGroup.checkedRadioButtonId
+            // Do nothing if nothing is checked (id == -1)
+            if (-1 != checkedId) {
+                var answerIndex = 0
+                when (checkedId) {
+                    R.id.secondAnswerRadioButton -> answerIndex = 1
+                }
+                binding.firstAnswerRadioButton.isEnabled = true
+                binding.secondAnswerRadioButton.isEnabled = true
+                binding.firstAnswerRadioButton.isChecked = false
+                binding.secondAnswerRadioButton.isChecked = false
+                binding.imageView.isVisible = false
+                binding.imageView2.isVisible = false
+
+                // The first answer in the original question is always the correct one, so if our
+                // answer matches, we have the correct answer.
+                if (answers[answerIndex] == currentQuestion.answers[0]) {
                     questionIndex++
+                    score++
+                    binding.textView4.text = getString(string.score, score)
+                    // Advance to the next question
+                    if (questionIndex < numQuestions) {
+                        currentQuestion = questionBank[questionIndex]
+                        binding.textView4.text = getString(string.score, score)
+                        setQuestion()
+                        binding.invalidateAll()
+                    } else {
+                        view.findNavController()
+                                .navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment(score))
+                    }
+                } else {
+                    questionIndex++
+                    binding.textView4.text = getString(string.score, score)
                     // Advance to the next question
                     if (questionIndex < numQuestions) {
                         currentQuestion = questionBank[questionIndex]
                         setQuestion()
                         binding.invalidateAll()
                     } else {
-                        view.findNavController().
-                        navigate(R.id.action_gameFragment_to_gameOverFragment)
+                        view.findNavController()
+                                .navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment(score))
                     }
-                } else {
-                    // Game over! A wrong answer sends us to the gameOverFragment.
                 }
             }
         }
